@@ -11,14 +11,14 @@ import java.util.Collection;
 import java.util.Set;
 
 @Entity
-@Table(name = "\"user\"")
+@Table(name = "user")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class User implements UserDetails {
     private static final long serialVersionUID = 5536306799835655715L;
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer userId;
     @Column(name = "username",unique = true)
     private String username;

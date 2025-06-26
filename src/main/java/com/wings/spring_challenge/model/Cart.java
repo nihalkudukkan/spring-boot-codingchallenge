@@ -24,5 +24,5 @@ public class Cart {
     private User user;
 
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
-    private List<CartProduct> cartProduct;
+    private List<CartProduct> cartProducts;
 }

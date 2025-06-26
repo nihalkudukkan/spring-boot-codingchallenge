@@ -15,7 +15,7 @@ public class CartProduct {
     @ManyToOne()
     private Cart cart;
 
-    @OneToOne
+    @OneToOne()
     private Product product;
 
     private int quantity;

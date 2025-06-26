@@ -1,7 +1,7 @@
 package com.wings.spring_challenge.repository;
 
-import com.wings.spring_challenge.model.User;
+import com.wings.spring_challenge.model.Cart;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepo extends JpaRepository<User, Integer> {
+public interface CartRepo extends JpaRepository<Cart, Integer> {
 }
