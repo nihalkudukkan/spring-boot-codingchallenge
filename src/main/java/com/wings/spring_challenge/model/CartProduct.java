@@ -1,5 +1,6 @@
 package com.wings.spring_challenge.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +14,7 @@ public class CartProduct {
     private int cpId;
 
     @ManyToOne()
+    @JsonIgnore
     private Cart cart;
 
     @OneToOne()
