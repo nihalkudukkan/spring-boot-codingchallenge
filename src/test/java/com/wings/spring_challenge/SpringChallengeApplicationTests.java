@@ -1,16 +1,34 @@
 package com.wings.spring_challenge;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wings.spring_challenge.repository.CategoryRepo;
 import com.wings.spring_challenge.repository.ProductRepo;
 import com.wings.spring_challenge.repository.UserRepo;
 import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
+import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+
+import java.net.URL;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.Matchers.hasSize;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -28,11 +46,6 @@ class SpringChallengeApplicationTests {
 	@Autowired
 	ObjectMapper objectMapper;
 
-	@Test
-	void contextLoads() {
-	}
-
-	/*
 	@Test
 	@Order(4)
 	public void productSearchStatus() throws Exception {
@@ -324,5 +337,5 @@ class SpringChallengeApplicationTests {
 		mvc.perform(get("/api/auth/seller/product/" + Integer.valueOf(arr[arr.length - 1])).header("JWT",
 				loginHelper(s_u, p).getContentAsString())).andExpect(status().is(404));
 	}
-*/
+
 }
